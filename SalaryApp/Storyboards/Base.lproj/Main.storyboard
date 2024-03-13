@@ -4,150 +4,90 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Расчёт зарплаты-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SalaryApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="EasyCountViewController" customModule="SalaryApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rjv-2B-CmV">
-                                <rect key="frame" x="8" y="124" width="359" height="32"/>
+                                <rect key="frame" x="8" y="118" width="359" height="32"/>
                                 <segments>
                                     <segment title="Выбрать период"/>
                                     <segment title="Установить сумму"/>
                                 </segments>
                             </segmentedControl>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sQE-hl-C66">
-                                <rect key="frame" x="16" y="221.5" width="343" height="50"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Работаю с" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UvD-d1-NOB">
-                                        <rect key="frame" x="0.0" y="0.0" width="193" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="B72-SZ-CRC">
-                                        <rect key="frame" x="193" y="0.0" width="150" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="Hmc-0N-piZ"/>
-                                        </constraints>
-                                    </datePicker>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qML-i0-b7o">
-                                <rect key="frame" x="16" y="271.5" width="343" height="50"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Работаю по" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ld6-YU-Ywh">
-                                        <rect key="frame" x="0.0" y="0.0" width="193" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="HvK-3C-tS0">
-                                        <rect key="frame" x="193" y="0.0" width="150" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="AXX-oT-bDd"/>
-                                        </constraints>
-                                    </datePicker>
-                                </subviews>
-                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Укажите период, за который хотите рассчитать зарплату" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKq-mk-4ZD">
-                                <rect key="frame" x="16" y="180" width="327" height="33.5"/>
+                                <rect key="frame" x="16" y="153" width="343" height="33.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Укажите период, в который не работали" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4AU-g1-Goi">
-                                <rect key="frame" x="16" y="346.5" width="343" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Md4-fk-EfK">
-                                <rect key="frame" x="16" y="624.5" width="343" height="34.5"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Добавить несколько периодов"/>
-                            </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Kyd-so-PtW">
-                                <rect key="frame" x="16" y="363.5" width="343" height="100"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="Jhs-HB-xTd">
+                                <rect key="frame" x="101.5" y="194.5" width="172" height="83"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e6z-0N-eGj">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Не работаю с" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zeo-Zn-dod">
-                                                <rect key="frame" x="0.0" y="0.0" width="193" height="50"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="JQW-Ug-2AL">
-                                                <rect key="frame" x="193" y="0.0" width="150" height="50"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="150" id="B20-iK-sw0"/>
-                                                    <constraint firstAttribute="height" constant="50" id="sLy-WL-t8u"/>
-                                                </constraints>
-                                            </datePicker>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ObS-RM-6gS">
-                                        <rect key="frame" x="0.0" y="50" width="343" height="50"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Не работаю по" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vF6-V6-5Uj">
-                                                <rect key="frame" x="0.0" y="0.0" width="193" height="50"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="Avq-vZ-x43">
-                                                <rect key="frame" x="193" y="0.0" width="150" height="50"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="150" id="JuQ-mb-FU1"/>
-                                                    <constraint firstAttribute="height" constant="50" id="OWJ-e8-qkL"/>
-                                                </constraints>
-                                            </datePicker>
-                                        </subviews>
-                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rcl-jD-zuz">
+                                        <rect key="frame" x="0.0" y="0.0" width="172" height="34.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="o5V-Jo-g7x"/>
+                                        </constraints>
+                                        <menu key="menu" title="Menu" id="84g-K5-DfJ">
+                                            <children>
+                                                <command title="2024" menuElementState="on" id="Cw7-lV-2Q2"/>
+                                                <command title="2023" id="BS5-wm-ZUs"/>
+                                                <command title="2022" id="kMP-3m-SsS"/>
+                                            </children>
+                                        </menu>
+                                        <state key="normal" title="Выберите год..."/>
+                                        <buttonConfiguration key="configuration" style="tinted" title="Выберите год...">
+                                            <color key="baseForegroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="baseBackgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="in3-HR-yv7">
+                                        <rect key="frame" x="0.0" y="48.5" width="172" height="34.5"/>
+                                        <menu key="menu" title="Menu" id="RXF-y7-K7Y">
+                                            <children>
+                                                <command title="2022" id="XeE-FK-ZqQ"/>
+                                                <command title="2023" id="3x4-d1-w9R"/>
+                                                <command title="2024" id="pSi-mV-jEt"/>
+                                            </children>
+                                        </menu>
+                                        <state key="normal" title="Выберите год..."/>
+                                        <buttonConfiguration key="configuration" style="tinted" title="Выберите месяц...">
+                                            <color key="baseForegroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="baseBackgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BackgroundColor1"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Md4-fk-EfK" secondAttribute="trailing" constant="16" id="4Ng-Am-lsO"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Md4-fk-EfK" secondAttribute="bottom" constant="8" id="7Ej-w8-43O"/>
-                            <constraint firstItem="rjv-2B-CmV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="7di-qe-g6r"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qML-i0-b7o" secondAttribute="trailing" constant="16" id="9hW-i5-LVS"/>
-                            <constraint firstItem="4AU-g1-Goi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="BvH-4p-RoC"/>
-                            <constraint firstItem="4AU-g1-Goi" firstAttribute="top" secondItem="qML-i0-b7o" secondAttribute="bottom" constant="25" id="NNy-Kn-Hho"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rjv-2B-CmV" secondAttribute="trailing" constant="8" id="PAa-OD-pAG"/>
-                            <constraint firstItem="Kyd-so-PtW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Qa7-0d-uzQ"/>
-                            <constraint firstItem="qML-i0-b7o" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Va0-Oj-rg6"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Kyd-so-PtW" secondAttribute="trailing" constant="16" id="YND-7y-maC"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="eKq-mk-4ZD" secondAttribute="trailing" constant="16" id="ZQW-NV-WZu"/>
-                            <constraint firstItem="eKq-mk-4ZD" firstAttribute="top" secondItem="rjv-2B-CmV" secondAttribute="bottom" constant="25" id="bsH-KO-zcf"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sQE-hl-C66" secondAttribute="trailing" constant="16" id="d68-Rh-PTM"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4AU-g1-Goi" secondAttribute="trailing" constant="16" id="dud-Oz-hEs"/>
-                            <constraint firstItem="Kyd-so-PtW" firstAttribute="top" secondItem="4AU-g1-Goi" secondAttribute="bottom" id="gOn-2T-Wqx"/>
-                            <constraint firstItem="sQE-hl-C66" firstAttribute="top" secondItem="eKq-mk-4ZD" secondAttribute="bottom" constant="8" id="nxS-CZ-eKj"/>
-                            <constraint firstItem="rjv-2B-CmV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="pgG-jk-0PP"/>
-                            <constraint firstItem="eKq-mk-4ZD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="rlj-wf-66h"/>
-                            <constraint firstItem="sQE-hl-C66" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="x3U-hl-4HJ"/>
-                            <constraint firstItem="qML-i0-b7o" firstAttribute="top" secondItem="sQE-hl-C66" secondAttribute="bottom" id="ye4-4S-qOf"/>
-                            <constraint firstItem="Md4-fk-EfK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ztm-qg-2Jc"/>
+                            <constraint firstItem="Jhs-HB-xTd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BuJ-4z-kDn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rjv-2B-CmV" secondAttribute="trailing" constant="8" id="HY6-07-QG3"/>
+                            <constraint firstItem="rjv-2B-CmV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="2" id="LeD-RD-vnj"/>
+                            <constraint firstAttribute="trailing" secondItem="eKq-mk-4ZD" secondAttribute="trailing" constant="16" id="U15-jN-ml3"/>
+                            <constraint firstItem="eKq-mk-4ZD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="jDI-P9-LNn"/>
+                            <constraint firstItem="Jhs-HB-xTd" firstAttribute="top" secondItem="eKq-mk-4ZD" secondAttribute="bottom" constant="8" id="jnA-z3-Lfa"/>
+                            <constraint firstItem="eKq-mk-4ZD" firstAttribute="top" secondItem="rjv-2B-CmV" secondAttribute="bottom" constant="4" id="mEQ-lv-Xnc"/>
+                            <constraint firstItem="rjv-2B-CmV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="mO3-Ur-DcU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Расчёт зарплаты" id="IN7-uw-mWv"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="356.25" y="-2.112676056338028"/>
+            <point key="canvasLocation" x="356" y="-2.2488755622188905"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3dD-aj-VWM">
@@ -169,8 +109,8 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="BackgroundColor1">
+            <color red="0.96100002527236938" green="0.94099998474121094" blue="0.88599997758865356" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

@@ -7,19 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48C334262BA1BD2200426AA5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C334252BA1BD2200426AA5 /* NetworkManager.swift */; };
 		48E66E122B9357E900D49DE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E66E112B9357E900D49DE5 /* AppDelegate.swift */; };
 		48E66E142B9357E900D49DE5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E66E132B9357E900D49DE5 /* SceneDelegate.swift */; };
-		48E66E162B9357E900D49DE5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E66E152B9357E900D49DE5 /* ViewController.swift */; };
+		48E66E162B9357E900D49DE5 /* EasyCountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E66E152B9357E900D49DE5 /* EasyCountViewController.swift */; };
 		48E66E192B9357E900D49DE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48E66E172B9357E900D49DE5 /* Main.storyboard */; };
 		48E66E1B2B9357EA00D49DE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48E66E1A2B9357EA00D49DE5 /* Assets.xcassets */; };
 		48E66E1E2B9357EA00D49DE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48E66E1C2B9357EA00D49DE5 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		48C334252BA1BD2200426AA5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		48E66E0E2B9357E900D49DE5 /* SalaryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SalaryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48E66E112B9357E900D49DE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48E66E132B9357E900D49DE5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		48E66E152B9357E900D49DE5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		48E66E152B9357E900D49DE5 /* EasyCountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyCountViewController.swift; sourceTree = "<group>"; };
 		48E66E182B9357E900D49DE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		48E66E1A2B9357EA00D49DE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48E66E1D2B9357EA00D49DE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,6 +39,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		48C334242BA1BCE200426AA5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				48C334252BA1BD2200426AA5 /* NetworkManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		48E66E052B9357E900D49DE5 = {
 			isa = PBXGroup;
 			children = (
@@ -56,9 +66,10 @@
 		48E66E102B9357E900D49DE5 /* SalaryApp */ = {
 			isa = PBXGroup;
 			children = (
-				48E66E252B93581200D49DE5 /* App */,
-				48E66E272B93583300D49DE5 /* Storyboards */,
 				48E66E262B93581F00D49DE5 /* ViewControllers */,
+				48C334242BA1BCE200426AA5 /* Services */,
+				48E66E272B93583300D49DE5 /* Storyboards */,
+				48E66E252B93581200D49DE5 /* App */,
 				48E66E1A2B9357EA00D49DE5 /* Assets.xcassets */,
 			);
 			path = SalaryApp;
@@ -77,7 +88,7 @@
 		48E66E262B93581F00D49DE5 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				48E66E152B9357E900D49DE5 /* ViewController.swift */,
+				48E66E152B9357E900D49DE5 /* EasyCountViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -162,7 +173,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48E66E162B9357E900D49DE5 /* ViewController.swift in Sources */,
+				48C334262BA1BD2200426AA5 /* NetworkManager.swift in Sources */,
+				48E66E162B9357E900D49DE5 /* EasyCountViewController.swift in Sources */,
 				48E66E122B9357E900D49DE5 /* AppDelegate.swift in Sources */,
 				48E66E142B9357E900D49DE5 /* SceneDelegate.swift in Sources */,
 			);
