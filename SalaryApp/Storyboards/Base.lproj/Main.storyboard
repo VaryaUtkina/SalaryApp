@@ -333,6 +333,9 @@
                     <navigationItem key="navigationItem" title="Зарплата" id="ggH-To-iob">
                         <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="IVB-P4-IEw">
                             <color key="tintColor" red="0.95686274510000002" green="0.50196078430000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="cancelAction:" destination="C1K-nq-iUi" id="QN2-rV-b8P"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>

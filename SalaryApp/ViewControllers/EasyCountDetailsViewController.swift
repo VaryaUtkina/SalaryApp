@@ -14,4 +14,7 @@ final class EasyCountDetailsViewController: UIViewController {
 
     }
 
+    @IBAction func cancelAction(_ sender: Any) {
+        dismiss(animated: true)
+    }
 }
