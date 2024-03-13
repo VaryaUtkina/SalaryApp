@@ -32,12 +32,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="Jhs-HB-xTd">
-                                <rect key="frame" x="101.5" y="194.5" width="172" height="83"/>
+                                <rect key="frame" x="87.5" y="194.5" width="200" height="83"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rcl-jD-zuz">
-                                        <rect key="frame" x="0.0" y="0.0" width="172" height="34.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="34.5"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="o5V-Jo-g7x"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="o5V-Jo-g7x"/>
                                         </constraints>
                                         <menu key="menu" title="Menu" id="84g-K5-DfJ">
                                             <children>
@@ -53,7 +53,7 @@
                                         </buttonConfiguration>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="in3-HR-yv7">
-                                        <rect key="frame" x="0.0" y="48.5" width="172" height="34.5"/>
+                                        <rect key="frame" x="0.0" y="48.5" width="200" height="34.5"/>
                                         <menu key="menu" title="Menu" id="RXF-y7-K7Y">
                                             <children>
                                                 <command title="2022" id="XeE-FK-ZqQ"/>
@@ -84,6 +84,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Расчёт зарплаты" id="IN7-uw-mWv"/>
+                    <connections>
+                        <outlet property="monthButton" destination="in3-HR-yv7" id="be0-uB-m5E"/>
+                        <outlet property="yearButton" destination="Rcl-jD-zuz" id="hV6-yc-lvl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

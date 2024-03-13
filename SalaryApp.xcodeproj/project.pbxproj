@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		48C334262BA1BD2200426AA5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C334252BA1BD2200426AA5 /* NetworkManager.swift */; };
+		48C334292BA1C28600426AA5 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C334282BA1C28600426AA5 /* Calendar.swift */; };
+		48C3342B2BA1CA2400426AA5 /* UserParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3342A2BA1CA2400426AA5 /* UserParameter.swift */; };
 		48E66E122B9357E900D49DE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E66E112B9357E900D49DE5 /* AppDelegate.swift */; };
 		48E66E142B9357E900D49DE5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E66E132B9357E900D49DE5 /* SceneDelegate.swift */; };
 		48E66E162B9357E900D49DE5 /* EasyCountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E66E152B9357E900D49DE5 /* EasyCountViewController.swift */; };
@@ -18,6 +20,8 @@
 
 /* Begin PBXFileReference section */
 		48C334252BA1BD2200426AA5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		48C334282BA1C28600426AA5 /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
+		48C3342A2BA1CA2400426AA5 /* UserParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserParameter.swift; sourceTree = "<group>"; };
 		48E66E0E2B9357E900D49DE5 /* SalaryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SalaryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48E66E112B9357E900D49DE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48E66E132B9357E900D49DE5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +51,15 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		48C334272BA1C25400426AA5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				48C334282BA1C28600426AA5 /* Calendar.swift */,
+				48C3342A2BA1CA2400426AA5 /* UserParameter.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		48E66E052B9357E900D49DE5 = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				48E66E262B93581F00D49DE5 /* ViewControllers */,
+				48C334272BA1C25400426AA5 /* Models */,
 				48C334242BA1BCE200426AA5 /* Services */,
 				48E66E272B93583300D49DE5 /* Storyboards */,
 				48E66E252B93581200D49DE5 /* App */,
@@ -173,10 +187,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48C3342B2BA1CA2400426AA5 /* UserParameter.swift in Sources */,
 				48C334262BA1BD2200426AA5 /* NetworkManager.swift in Sources */,
 				48E66E162B9357E900D49DE5 /* EasyCountViewController.swift in Sources */,
 				48E66E122B9357E900D49DE5 /* AppDelegate.swift in Sources */,
 				48E66E142B9357E900D49DE5 /* SceneDelegate.swift in Sources */,
+				48C334292BA1C28600426AA5 /* Calendar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
