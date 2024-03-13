@@ -86,8 +86,9 @@ final class EasyCountViewController: UIViewController {
     }
     
     private func updateParameter() {
+        let salary = Double(salaryTextField.text ?? "") ?? 0
         if let year = chosenYear, let month = chosenMonth {
-            parameter = UserParameter(year: year, month: month)
+            parameter = UserParameter(year: year, month: month, salary: salary)
             print(parameter ?? "")
         }
     }

@@ -10,6 +10,7 @@ import Foundation
 struct UserParameter {
     let year: Int
     let month: Month
+    let salary: Double
 }
 
 enum Month: String {
