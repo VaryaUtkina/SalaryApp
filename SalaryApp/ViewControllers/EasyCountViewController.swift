@@ -27,8 +27,12 @@ enum Link: String {
 final class EasyCountViewController: UIViewController {
     @IBOutlet var yearButton: UIButton!
     @IBOutlet var monthButton: UIButton!
+    @IBOutlet var salaryTextField: UITextField!
     
-    private var parameter = UserParameter(year: 0, month: .january)
+    private var parameter: UserParameter?
+    private var chosenYear: Int?
+    private var chosenMonth: Month?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,39 +41,56 @@ final class EasyCountViewController: UIViewController {
     }
     
     private func setPullDownButton() {
-        let optionClosure = { (action: UIAction) in
+        let yearOptionClosure = { [weak self] (action: UIAction) in
+            guard let self else { return }
+            self.chosenYear = Int(action.title)
+            self.updateParameter()
         }
-        
+                
+        let monthOptionClosure = { [weak self] (action: UIAction) in
+            guard let self else { return }
+            let month = Month(rawValue: action.title)
+            self.chosenMonth = month
+            self.updateParameter()
+        }
+
+
         yearButton.menu = UIMenu(children: [
-            UIAction(title: "Выберите год...", state: .on, handler: optionClosure),
-            UIAction(title: Link.url2024.rawValue, handler: optionClosure),
-            UIAction(title: Link.url2023.rawValue, handler: optionClosure),
-            UIAction(title: Link.url2022.rawValue, handler: optionClosure)]
+            UIAction(title: "Выберите год...", state: .on, handler: yearOptionClosure),
+            UIAction(title: Link.url2024.rawValue, handler: yearOptionClosure),
+            UIAction(title: Link.url2023.rawValue, handler: yearOptionClosure),
+            UIAction(title: Link.url2022.rawValue, handler: yearOptionClosure)]
         )
         
         yearButton.showsMenuAsPrimaryAction = true
         yearButton.changesSelectionAsPrimaryAction = true
         
         monthButton.menu = UIMenu(children: [
-            UIAction(title: "Выберите месяц...", state: .on, handler: optionClosure),
-            UIAction(title: Month.january.rawValue, handler: optionClosure),
-            UIAction(title: Month.february.rawValue, handler: optionClosure),
-            UIAction(title: Month.march.rawValue, handler: optionClosure),
-            UIAction(title: Month.april.rawValue, handler: optionClosure),
-            UIAction(title: Month.may.rawValue, handler: optionClosure),
-            UIAction(title: Month.june.rawValue, handler: optionClosure),
-            UIAction(title: Month.june.rawValue, handler: optionClosure),
-            UIAction(title: Month.august.rawValue, handler: optionClosure),
-            UIAction(title: Month.september.rawValue, handler: optionClosure),
-            UIAction(title: Month.october.rawValue, handler: optionClosure),
-            UIAction(title: Month.november.rawValue, handler: optionClosure),
-            UIAction(title: Month.december.rawValue, handler: optionClosure)]
+            UIAction(title: "Выберите месяц...", state: .on, handler: monthOptionClosure),
+            UIAction(title: Month.january.rawValue, handler: monthOptionClosure),
+            UIAction(title: Month.february.rawValue, handler: monthOptionClosure),
+            UIAction(title: Month.march.rawValue, handler: monthOptionClosure),
+            UIAction(title: Month.april.rawValue, handler: monthOptionClosure),
+            UIAction(title: Month.may.rawValue, handler: monthOptionClosure),
+            UIAction(title: Month.june.rawValue, handler: monthOptionClosure),
+            UIAction(title: Month.july.rawValue, handler: monthOptionClosure),
+            UIAction(title: Month.august.rawValue, handler: monthOptionClosure),
+            UIAction(title: Month.september.rawValue, handler: monthOptionClosure),
+            UIAction(title: Month.october.rawValue, handler: monthOptionClosure),
+            UIAction(title: Month.november.rawValue, handler: monthOptionClosure),
+            UIAction(title: Month.december.rawValue, handler: monthOptionClosure)]
         )
         
         monthButton.showsMenuAsPrimaryAction = true
         monthButton.changesSelectionAsPrimaryAction = true
     }
-
+    
+    private func updateParameter() {
+        if let year = chosenYear, let month = chosenMonth {
+            parameter = UserParameter(year: year, month: month)
+            print(parameter ?? "")
+        }
+    }
 
 }
 

@@ -18,21 +18,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rjv-2B-CmV">
-                                <rect key="frame" x="8" y="118" width="359" height="32"/>
-                                <segments>
-                                    <segment title="Выбрать период"/>
-                                    <segment title="Установить сумму"/>
-                                </segments>
-                            </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Укажите период, за который хотите рассчитать зарплату" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKq-mk-4ZD">
-                                <rect key="frame" x="16" y="153" width="343" height="33.5"/>
+                                <rect key="frame" x="16" y="124" width="343" height="33.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="Jhs-HB-xTd">
-                                <rect key="frame" x="87.5" y="194.5" width="200" height="83"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Jhs-HB-xTd">
+                                <rect key="frame" x="87.5" y="177.5" width="200" height="89"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rcl-jD-zuz">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="34.5"/>
@@ -53,7 +46,7 @@
                                         </buttonConfiguration>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="in3-HR-yv7">
-                                        <rect key="frame" x="0.0" y="48.5" width="200" height="34.5"/>
+                                        <rect key="frame" x="0.0" y="54.5" width="200" height="34.5"/>
                                         <menu key="menu" title="Menu" id="RXF-y7-K7Y">
                                             <children>
                                                 <command title="2022" id="XeE-FK-ZqQ"/>
@@ -69,23 +62,40 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Укажите оклад, который получаете за месяц работы" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVd-3Q-lF8">
+                                <rect key="frame" x="16" y="286.5" width="343" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите свой оклад" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P2h-uu-sme">
+                                <rect key="frame" x="87.5" y="340" width="200" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="7Ao-jC-cm2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="BackgroundColor1"/>
                         <constraints>
                             <constraint firstItem="Jhs-HB-xTd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BuJ-4z-kDn"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rjv-2B-CmV" secondAttribute="trailing" constant="8" id="HY6-07-QG3"/>
-                            <constraint firstItem="rjv-2B-CmV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="2" id="LeD-RD-vnj"/>
+                            <constraint firstItem="P2h-uu-sme" firstAttribute="top" secondItem="tVd-3Q-lF8" secondAttribute="bottom" constant="20" id="EQg-e3-2cF"/>
+                            <constraint firstItem="P2h-uu-sme" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KHU-z3-mkZ"/>
+                            <constraint firstItem="eKq-mk-4ZD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="Mi7-0f-bC3"/>
+                            <constraint firstItem="tVd-3Q-lF8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="PJg-ge-mIs"/>
                             <constraint firstAttribute="trailing" secondItem="eKq-mk-4ZD" secondAttribute="trailing" constant="16" id="U15-jN-ml3"/>
+                            <constraint firstItem="tVd-3Q-lF8" firstAttribute="top" secondItem="Jhs-HB-xTd" secondAttribute="bottom" constant="20" id="abt-6y-I0y"/>
                             <constraint firstItem="eKq-mk-4ZD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="jDI-P9-LNn"/>
-                            <constraint firstItem="Jhs-HB-xTd" firstAttribute="top" secondItem="eKq-mk-4ZD" secondAttribute="bottom" constant="8" id="jnA-z3-Lfa"/>
-                            <constraint firstItem="eKq-mk-4ZD" firstAttribute="top" secondItem="rjv-2B-CmV" secondAttribute="bottom" constant="4" id="mEQ-lv-Xnc"/>
-                            <constraint firstItem="rjv-2B-CmV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="mO3-Ur-DcU"/>
+                            <constraint firstItem="Jhs-HB-xTd" firstAttribute="top" secondItem="eKq-mk-4ZD" secondAttribute="bottom" constant="20" id="jnA-z3-Lfa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tVd-3Q-lF8" secondAttribute="trailing" constant="16" id="yif-Xe-mfT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Расчёт зарплаты" id="IN7-uw-mWv"/>
                     <connections>
                         <outlet property="monthButton" destination="in3-HR-yv7" id="be0-uB-m5E"/>
+                        <outlet property="salaryTextField" destination="P2h-uu-sme" id="rY6-XK-NQo"/>
                         <outlet property="yearButton" destination="Rcl-jD-zuz" id="hV6-yc-lvl"/>
                     </connections>
                 </viewController>
