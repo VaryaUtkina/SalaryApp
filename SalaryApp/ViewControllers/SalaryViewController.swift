@@ -24,7 +24,7 @@ enum Link: String {
     }
 }
 
-final class EasyCountViewController: UIViewController {
+final class SalaryViewController: UIViewController {
     // MARK: - IB Outlets
     @IBOutlet var yearButton: UIButton!
     @IBOutlet var monthButton: UIButton!
@@ -45,7 +45,7 @@ final class EasyCountViewController: UIViewController {
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let navigationVC = segue.destination as? UINavigationController
-        let detailsVC = navigationVC?.topViewController as? EasyCountDetailsViewController
+        let detailsVC = navigationVC?.topViewController as? SalaryDetailsViewController
         detailsVC?.parameter = parameter
     }
     
@@ -132,7 +132,7 @@ final class EasyCountViewController: UIViewController {
 }
 
 // MARK: - Extension: UITextFieldDelegate
-extension EasyCountViewController: UITextFieldDelegate {
+extension SalaryViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         let toolbar = UIToolbar()
         toolbar.sizeToFit()

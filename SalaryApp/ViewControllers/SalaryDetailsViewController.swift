@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class EasyCountDetailsViewController: UIViewController {
+final class SalaryDetailsViewController: UIViewController {
     @IBOutlet var yearLabel: UILabel!
     
     var parameter: UserParameter!
