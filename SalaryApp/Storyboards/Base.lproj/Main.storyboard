@@ -103,7 +103,7 @@
                                     <color key="baseBackgroundColor" red="0.96078431369999995" green="0.58431372550000005" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="iXx-fF-1Od" kind="presentation" id="I2g-XE-By6"/>
+                                    <action selector="calculateAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nB1-QV-WrY"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -132,6 +132,7 @@
                         <outlet property="monthButton" destination="in3-HR-yv7" id="be0-uB-m5E"/>
                         <outlet property="salaryTextField" destination="P2h-uu-sme" id="rY6-XK-NQo"/>
                         <outlet property="yearButton" destination="Rcl-jD-zuz" id="hV6-yc-lvl"/>
+                        <segue destination="uti-Cl-ggm" kind="presentation" identifier="showDetails" id="Gim-rM-jig"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -338,10 +339,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="yearLabel" destination="Ind-xK-XdZ" id="hgs-9o-xn4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JMH-09-PYg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1800.8" y="-2.2488755622188905"/>
+            <point key="canvasLocation" x="1918" y="-2"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3dD-aj-VWM">
@@ -365,25 +369,22 @@
             <point key="canvasLocation" x="-409" y="-2"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="9K1-SI-KCu">
+        <scene sceneID="2up-Sv-JE0">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iXx-fF-1Od" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uti-Cl-ggm" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="bO8-2g-f5G">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="BUw-Cm-6FR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="108"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="C1K-nq-iUi" kind="relationship" relationship="rootViewController" id="eaY-KK-aNh"/>
+                        <segue destination="C1K-nq-iUi" kind="relationship" relationship="rootViewController" id="hVl-JC-tqO"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KFg-qg-A7R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fgI-TI-Oz5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1064.8" y="-2.2488755622188905"/>
+            <point key="canvasLocation" x="1156" y="-2"/>
         </scene>
     </scenes>
     <resources>

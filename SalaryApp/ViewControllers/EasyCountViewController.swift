@@ -25,33 +25,57 @@ enum Link: String {
 }
 
 final class EasyCountViewController: UIViewController {
+    // MARK: - IB Outlets
     @IBOutlet var yearButton: UIButton!
     @IBOutlet var monthButton: UIButton!
     @IBOutlet var salaryTextField: UITextField!
     
-    private var parameter: UserParameter?
-    private var chosenYear: Int?
-    private var chosenMonth: Month?
+    // MARK: - Private Properties
+    private var parameter: UserParameter!
+    private var chosenYear: Int!
+    private var chosenMonth: Month!
 
-    
+    // MARK: - View Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setPullDownButton()
     }
     
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let navigationVC = segue.destination as? UINavigationController
+        let detailsVC = navigationVC?.topViewController as? EasyCountDetailsViewController
+        detailsVC?.parameter = parameter
+    }
+    
+    // MARK: - Override Methods
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+    
+    // MARK: - IB Actions
+    @IBAction func calculateAction(_ sender: UIButton) {
+        updateParameter()
+        if parameter != nil {
+            performSegue(withIdentifier: "showDetails", sender: nil)
+        } else {
+            showAlert()
+        }
+    }
+    
+    // MARK: - Private Methods
     private func setPullDownButton() {
         let yearOptionClosure = { [weak self] (action: UIAction) in
             guard let self else { return }
             self.chosenYear = Int(action.title)
-            self.updateParameter()
         }
                 
         let monthOptionClosure = { [weak self] (action: UIAction) in
             guard let self else { return }
             let month = Month(rawValue: action.title)
             self.chosenMonth = month
-            self.updateParameter()
         }
 
 
@@ -86,12 +110,49 @@ final class EasyCountViewController: UIViewController {
     }
     
     private func updateParameter() {
-        let salary = Double(salaryTextField.text ?? "") ?? 0
-        if let year = chosenYear, let month = chosenMonth {
+        if let salaryText = salaryTextField.text,
+           let salary = Double(salaryText.replacingOccurrences(of: ",", with: ".")),
+           salary != 0,
+           let year = chosenYear,
+           let month = chosenMonth {
             parameter = UserParameter(year: year, month: month, salary: salary)
-            print(parameter ?? "")
         }
     }
-
+    
+    private func showAlert() {
+        let alert = UIAlertController(
+            title: "Недостаточно данных",
+            message: "Пожалуйста, введите год, месяц и оклад",
+            preferredStyle: .alert
+        )
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
 }
 
+// MARK: - Extension: UITextFieldDelegate
+extension EasyCountViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        textField.inputAccessoryView = toolbar
+        
+        let flexibleSpace = UIBarButtonItem(
+            barButtonSystemItem: .flexibleSpace,
+            target: nil,
+            action: nil
+        )
+        let doneButton = UIBarButtonItem(
+            barButtonSystemItem: .done,
+            target: textField,
+            action: #selector(resignFirstResponder)
+        )
+        
+        toolbar.items = [flexibleSpace, doneButton]
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+    }
+}

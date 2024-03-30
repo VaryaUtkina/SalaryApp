@@ -8,10 +8,23 @@
 import UIKit
 
 final class EasyCountDetailsViewController: UIViewController {
-
+    @IBOutlet var yearLabel: UILabel!
+    
+    var parameter: UserParameter!
+    
+    private var networkManager = NetworkManager.shared
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        yearLabel.text = "Год: \(parameter.year.formatted())"
+//        networkManager.fetchCalednar(Link(rawValue: parameter.year.formatted())!) { result in
+//            switch result {
+//            case .success(let calendar):
+//                print(calendar)
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
     }
 
     @IBAction func cancelAction(_ sender: Any) {
