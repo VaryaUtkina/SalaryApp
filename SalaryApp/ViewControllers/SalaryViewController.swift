@@ -131,7 +131,7 @@ final class SalaryViewController: UIViewController {
     }
 }
 
-// MARK: - Extension: UITextFieldDelegate
+// MARK: - UITextFieldDelegate
 extension SalaryViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         let toolbar = UIToolbar()
@@ -143,6 +143,7 @@ extension SalaryViewController: UITextFieldDelegate {
             target: nil,
             action: nil
         )
+        
         let doneButton = UIBarButtonItem(
             barButtonSystemItem: .done,
             target: textField,

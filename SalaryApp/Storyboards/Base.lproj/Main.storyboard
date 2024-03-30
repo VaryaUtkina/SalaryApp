@@ -13,7 +13,7 @@
         <!--Расчёт зарплаты-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="EasyCountViewController" customModule="SalaryApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SalaryViewController" customModule="SalaryApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -142,7 +142,7 @@
         <!--Зарплата-->
         <scene sceneID="htt-5s-Jub">
             <objects>
-                <viewController id="C1K-nq-iUi" customClass="EasyCountDetailsViewController" customModule="SalaryApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="C1K-nq-iUi" customClass="SalaryDetailsViewController" customModule="SalaryApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bUr-pg-Qgo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
