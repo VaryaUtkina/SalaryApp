@@ -17,14 +17,14 @@ final class SalaryDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         yearLabel.text = "Год: \(parameter.year.formatted())"
-//        networkManager.fetchCalednar(Link(rawValue: parameter.year.formatted())!) { result in
-//            switch result {
-//            case .success(let calendar):
-//                print(calendar)
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
+        networkManager.fetchCalednar(Link(rawValue: parameter.year.formatted())!) { result in
+            switch result {
+            case .success(let calendar):
+                print(calendar)
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 
     @IBAction func cancelAction(_ sender: Any) {
