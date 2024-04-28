@@ -119,6 +119,7 @@ final class SalaryViewController: UIViewController {
         }
     }
     
+    
     private func showAlert() {
         let alert = UIAlertController(
             title: "Недостаточно данных",
