@@ -7,6 +7,7 @@
 
 import UIKit
 
+// проверить URL
 enum Link: String {
     case url2022 = "2022"
     case url2023 = "2023"
