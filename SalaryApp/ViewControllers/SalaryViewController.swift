@@ -25,6 +25,7 @@ enum Link: String {
     }
 }
 
+
 final class SalaryViewController: UIViewController {
     // MARK: - IB Outlets
     @IBOutlet var yearButton: UIButton!
